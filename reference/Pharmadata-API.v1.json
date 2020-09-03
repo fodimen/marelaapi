@@ -106,7 +106,7 @@
         }
       },
       "post": {
-        "summary": "customer/{cardcode}/orders - POST",
+        "summary": "/{cardcode}/orders - POST",
         "operationId": "post-orders",
         "responses": {
           "200": {
