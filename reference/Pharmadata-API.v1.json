@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/customer/{cardcode}": {
+    "/{cardcode}": {
       "parameters": [
         {
           "schema": {
@@ -24,7 +24,7 @@
         }
       ],
       "get": {
-        "summary": "/customer/{cardcode} - GET",
+        "summary": "/{cardcode} - GET",
         "tags": [],
         "responses": {
           "200": {
@@ -68,9 +68,9 @@
         "parameters": []
       }
     },
-    "customer/{cardcode}/orders": {
+    "/{cardcode}/orders": {
       "get": {
-        "summary": "customer/{cardcode}/orders - GET",
+        "summary": "/{cardcode}/orders - GET",
         "tags": [],
         "responses": {},
         "operationId": "get-orders",
@@ -280,9 +280,9 @@
         }
       ]
     },
-    "customer/{cardcode}/itemavailability": {
+    "/{cardcode}/itemavailability": {
       "get": {
-        "summary": "customer/{cardcode}/itemavailability - GET",
+        "summary": "/{cardcode}/itemavailability - GET",
         "tags": [],
         "responses": {
           "200": {
@@ -386,9 +386,9 @@
         }
       ]
     },
-    "customer/{cardcode}/shipments": {
+    "/{cardcode}/shipments": {
       "get": {
-        "summary": "customer/{cardcode}/shipments - GET",
+        "summary": "/{cardcode}/shipments - GET",
         "tags": [],
         "responses": {
           "200": {
@@ -484,7 +484,7 @@
         }
       ]
     },
-    "/customer/{cardcode}/orders/{docnum}": {
+    "/{cardcode}/orders/{docnum}": {
       "parameters": [
         {
           "schema": {
@@ -504,7 +504,7 @@
         }
       ],
       "get": {
-        "summary": "/customer/{cardcode}/orders/{docnum} - GET",
+        "summary": "/{cardcode}/orders/{docnum} - GET",
         "tags": [],
         "responses": {},
         "operationId": "get-customer-cardcode-orders-docnum",
