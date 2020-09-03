@@ -28,7 +28,8 @@
         "tags": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "headers": {}
           }
         },
         "operationId": "get-customers-cardcode",
@@ -40,26 +41,36 @@
                 "type": "object",
                 "properties": {
                   "cardcode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Medifonin asiakasnumero"
                   },
                   "cardname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Asiakkaan nimi"
                   },
                   "": {
                     "type": "array",
+                    "description": "Asiakkaaseen liittyvät asiakkuudet",
                     "items": {
                       "type": "object",
                       "properties": {
                         "cardcode": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "Asiakasnumero"
                         },
                         "cardname": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "Asiakkaan nimi"
                         }
                       }
                     }
                   }
-                }
+                },
+                "required": [
+                  "cardcode",
+                  "cardname",
+                  ""
+                ]
               }
             }
           },
@@ -120,6 +131,10 @@
                       "type": "string",
                       "description": "Medifonin asiakasnumero"
                     },
+                    "cardname": {
+                      "type": "string",
+                      "description": "Asiakkaan nimi"
+                    },
                     "lictradnum": {
                       "type": "string",
                       "description": "VAT-tunnus"
@@ -130,15 +145,18 @@
                     },
                     "createdate": {
                       "type": "string",
-                      "description": "Tilauksen luomispäivä"
+                      "description": "Tilauksen luomispäivä",
+                      "format": "date-time"
                     },
                     "docdate": {
                       "type": "string",
-                      "description": "Tilauspäivä"
+                      "description": "Tilauspäivä",
+                      "format": "date-time"
                     },
                     "duedate": {
                       "type": "string",
-                      "description": "Toimituspäivä"
+                      "description": "Toimituspäivä",
+                      "format": "date-time"
                     },
                     "deliverywithnextorder": {
                       "type": "boolean",
@@ -200,8 +218,10 @@
                   },
                   "required": [
                     "cardcode",
+                    "cardname",
                     "lictradnum",
                     "reference",
+                    "createdate",
                     "docdate",
                     "deliverywithnextorder",
                     "orderrows"
@@ -224,7 +244,8 @@
                     "description": "Medifonin asiakasnumero"
                   },
                   "cardname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Asiakkaan nimi"
                   },
                   "reference": {
                     "type": "string",
@@ -529,39 +550,52 @@
       "Order": {
         "title": "Order",
         "type": "object",
+        "x-examples": {
+          "example-1": {}
+        },
         "properties": {
           "docnum": {
-            "type": "string"
+            "type": "string",
+            "description": "Tilausnumero"
           },
           "cardcode": {
-            "type": "string"
+            "type": "string",
+            "description": "asiakasnumero"
           },
           "cardname": {
-            "type": "string"
+            "type": "string",
+            "description": "asiakkaan nimi"
           },
           "vatnumber": {
-            "type": "string"
+            "type": "string",
+            "description": "VAT-tunnus"
           },
           "createdate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "description": "tilauksen luontiaika"
           },
           "docdate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "description": "tilauspäivä"
           },
           "docduedate": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "description": "tilauksen toimituspäivä"
           },
           "reference": {
-            "type": "string"
+            "type": "string",
+            "description": "tilausviite"
           },
           "docstatus": {
-            "type": "string"
+            "type": "string",
+            "description": "tilauksen tila (avoin/suljettu)"
           },
           "isbackorder": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "onko tilaus jälkitoimituksena"
           },
           "orderrows": {
             "type": "array",
@@ -569,9 +603,6 @@
               "$ref": "#/components/schemas/OrderRow"
             }
           }
-        },
-        "x-examples": {
-          "example-1": {}
         }
       },
       "Shipment": {
@@ -611,38 +642,48 @@
         "type": "object",
         "properties": {
           "itemcode": {
-            "type": "string"
+            "type": "string",
+            "description": "tuotenumero"
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "description": "tuotteen kuvaus"
           },
           "quantity": {
-            "type": "number"
+            "type": "number",
+            "description": "määrä"
           },
           "openquantity": {
-            "type": "number"
+            "type": "number",
+            "description": "avoin määrä (jälkitoimitusmäärä)"
           },
           "unitprice": {
-            "type": "number"
+            "type": "number",
+            "description": "yksikköhinta"
           },
           "discount": {
-            "type": "number"
+            "type": "number",
+            "description": "alennus-%"
           },
           "unitnetprice": {
-            "type": "number"
+            "type": "number",
+            "description": "alennettu yksikköhinta"
           },
           "linetotal": {
-            "type": "number"
+            "type": "number",
+            "description": "rivin veroton loppusumma"
           },
           "vatpercent": {
-            "type": "number"
+            "type": "number",
+            "description": "veroluokka"
           },
           "linestatus": {
             "type": "string",
             "enum": [
               "O",
               "C"
-            ]
+            ],
+            "description": "rivin tila (avoin/suljettu)"
           }
         }
       },
