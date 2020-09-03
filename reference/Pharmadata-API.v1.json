@@ -1,0 +1,674 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Pharmadata API",
+    "version": "1.0",
+    "description": "Geneerinen API Pharmadatan käyttöön"
+  },
+  "servers": [
+    {
+      "url": "https://api2.medifon.fi/api/pd",
+      "description": "Pharmadatan API"
+    }
+  ],
+  "paths": {
+    "/customer/{cardcode}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "cardcode",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "get-customers-cardcode",
+        "description": "Palauttaa tiedot asiakkuudesta",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cardcode": {
+                    "type": "string"
+                  },
+                  "cardname": {
+                    "type": "string"
+                  },
+                  "": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "cardcode": {
+                          "type": "string"
+                        },
+                        "cardname": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "parameters": []
+      }
+    },
+    "customer/{cardcode}/orders": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-orders",
+        "description": "Palauttaa asiakkaan tilaukset",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2020-01-01"
+            },
+            "in": "query",
+            "name": "afterDate",
+            "description": "Vain annettua päiväystä uudemmat tilaukset"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "orders": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Order"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-orders",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cardcode": {
+                      "type": "string",
+                      "description": "Medifonin asiakasnumero"
+                    },
+                    "lictradnum": {
+                      "type": "string",
+                      "description": "VAT-tunnus"
+                    },
+                    "reference": {
+                      "type": "string",
+                      "description": "Tilausviite"
+                    },
+                    "createdate": {
+                      "type": "string",
+                      "description": "Tilauksen luomispäivä"
+                    },
+                    "docdate": {
+                      "type": "string",
+                      "description": "Tilauspäivä"
+                    },
+                    "duedate": {
+                      "type": "string",
+                      "description": "Toimituspäivä"
+                    },
+                    "deliverywithnextorder": {
+                      "type": "boolean",
+                      "description": "Toimitetaanko tilaus seuraavan tilauksen yhteydessä"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Tilauksen tila"
+                    },
+                    "orderrows": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "itemcode": {
+                            "type": "string",
+                            "description": "Medifonin tuotenumero"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Tuotteen kuvaus"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "description": "Tilausmäärä"
+                          },
+                          "pricebefdi": {
+                            "type": "number",
+                            "description": "Alentamaton kappalehinta"
+                          },
+                          "discountpercent": {
+                            "type": "number",
+                            "description": "Alennus%"
+                          },
+                          "price": {
+                            "type": "number",
+                            "description": "Alennettu kappalehinta"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "Tilausrivin tila"
+                          },
+                          "errorinfo": {
+                            "type": "string",
+                            "description": "Jos tilausivi on virheellinen palauttaa virheen"
+                          }
+                        },
+                        "required": [
+                          "itemcode",
+                          "description",
+                          "quantity",
+                          "pricebefdi",
+                          "discountpercent",
+                          "price",
+                          "errorinfo"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "cardcode",
+                    "lictradnum",
+                    "reference",
+                    "docdate",
+                    "deliverywithnextorder",
+                    "orderrows"
+                  ]
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "description": "Luo tilauksen asiakkaalle",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cardcode": {
+                    "type": "string",
+                    "description": "Medifonin asiakasnumero"
+                  },
+                  "cardname": {
+                    "type": "string"
+                  },
+                  "reference": {
+                    "type": "string",
+                    "description": "Tilausviite"
+                  },
+                  "duedate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Toimituspäivä. "
+                  },
+                  "deliverywithnextorder": {
+                    "type": "boolean",
+                    "description": "Toimitetaanko tilaus seuraavan tilauksen yhteydessä"
+                  },
+                  "orderrows": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "itemcode": {
+                          "type": "string",
+                          "description": "Medifonin tuotenumero"
+                        },
+                        "quantity": {
+                          "type": "integer",
+                          "description": "Tilattava määrä"
+                        }
+                      },
+                      "required": [
+                        "itemcode",
+                        "quantity"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "cardcode",
+                  "cardname"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "cardcode",
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "customer/{cardcode}/itemavailability": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "itemcode": {
+                            "type": "string"
+                          },
+                          "itemname": {
+                            "type": "string"
+                          },
+                          "onhand": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Item"
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "operationId": "get-itemavailability",
+        "description": "Palauttaa tuotteiden saatavuuden",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ],
+              "example": "onlyOutOfStock=true"
+            },
+            "in": "query",
+            "name": "onlyOutOfStockItems"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "itemcode": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "example": {
+                  "value": [
+                    {
+                      "itemcode": "000451"
+                    },
+                    {
+                      "itemcode": "9274097"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "cardcode",
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "customer/{cardcode}/shipments": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Customer": {
+                      "type": "object",
+                      "properties": {
+                        "": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "ShipToCustomer": {
+                      "type": "object"
+                    },
+                    "ShipmentPackages": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "SSCC": {
+                            "type": "string"
+                          },
+                          "PackageType": {
+                            "type": "string"
+                          },
+                          "PackageLines": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "itemcode": {
+                                  "type": "string"
+                                },
+                                "vnr": {
+                                  "type": "string"
+                                },
+                                "description": {
+                                  "type": "string"
+                                },
+                                "deliveredquantity": {
+                                  "type": "number"
+                                },
+                                "orderedquantity": {
+                                  "type": "number"
+                                },
+                                "batchnumber": {
+                                  "type": "string"
+                                },
+                                "unitprice": {
+                                  "type": "number"
+                                },
+                                "unitnetprice": {
+                                  "type": "number"
+                                },
+                                "discountpercentage": {
+                                  "type": "number"
+                                },
+                                "ordernumber": {
+                                  "type": "string"
+                                },
+                                "orderreference": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-shipments",
+        "description": "Asiakkaalle tehdyt lähetykset"
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "cardcode",
+          "in": "path",
+          "required": true
+        }
+      ]
+    },
+    "/customer/{cardcode}/orders/{docnum}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "cardcode",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "docnum",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-customer-cardcode-orders-docnum",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              },
+              "examples": {
+                "example-1": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Order": {
+        "title": "Order",
+        "type": "object",
+        "properties": {
+          "docnum": {
+            "type": "string"
+          },
+          "cardcode": {
+            "type": "string"
+          },
+          "cardname": {
+            "type": "string"
+          },
+          "vatnumber": {
+            "type": "string"
+          },
+          "createdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "docdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "docduedate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "docstatus": {
+            "type": "string"
+          },
+          "isbackorder": {
+            "type": "boolean"
+          },
+          "orderrows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderRow"
+            }
+          }
+        },
+        "x-examples": {
+          "example-1": {}
+        }
+      },
+      "Shipment": {
+        "title": "Shipment",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "Item": {
+        "title": "Item",
+        "type": "object",
+        "properties": {
+          "itemcode": {
+            "type": "string"
+          },
+          "itemname": {
+            "type": "string"
+          },
+          "onhand": {
+            "type": "number"
+          },
+          "expirationdateonsale": {
+            "type": "string",
+            "format": "date"
+          },
+          "availablefrom": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "OrderRow": {
+        "title": "OrderRow",
+        "type": "object",
+        "properties": {
+          "itemcode": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "openquantity": {
+            "type": "number"
+          },
+          "unitprice": {
+            "type": "number"
+          },
+          "discount": {
+            "type": "number"
+          },
+          "unitnetprice": {
+            "type": "number"
+          },
+          "linetotal": {
+            "type": "number"
+          },
+          "vatpercent": {
+            "type": "number"
+          },
+          "linestatus": {
+            "type": "string",
+            "enum": [
+              "O",
+              "C"
+            ]
+          }
+        }
+      },
+      "ShipmentPack": {
+        "title": "ShipmentPack",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "ShipmentPackLine": {
+        "title": "ShipmentPackLine",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Authorization": {
+        "name": "Basic",
+        "type": "apiKey",
+        "in": "header"
+      }
+    }
+  }
+}
