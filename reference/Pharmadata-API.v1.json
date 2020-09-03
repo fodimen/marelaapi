@@ -24,7 +24,7 @@
         }
       ],
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Asiakas - Customer",
         "tags": [],
         "responses": {
           "200": {
@@ -70,7 +70,7 @@
     },
     "customer/{cardcode}/orders": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Tilaukset - Orders",
         "tags": [],
         "responses": {},
         "operationId": "get-orders",
@@ -282,7 +282,7 @@
     },
     "customer/{cardcode}/itemavailability": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Tuotteiden saatavuus - Item availability",
         "tags": [],
         "responses": {
           "200": {
@@ -387,7 +387,7 @@
     },
     "customer/{cardcode}/shipments": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Lähetykset - Shipments",
         "tags": [],
         "responses": {
           "200": {
@@ -503,7 +503,7 @@
         }
       ],
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Tilaus - Order",
         "tags": [],
         "responses": {},
         "operationId": "get-customer-cardcode-orders-docnum",
