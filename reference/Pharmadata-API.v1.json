@@ -518,7 +518,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Asiakkaan yksittäinen tilaus"
       }
     }
   },
