@@ -106,7 +106,7 @@
         }
       },
       "post": {
-        "summary": "",
+        "summary": "Luo tilaus",
         "operationId": "post-orders",
         "responses": {
           "200": {
