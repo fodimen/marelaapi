@@ -24,7 +24,7 @@
         }
       ],
       "get": {
-        "summary": "Asiakas - Customer",
+        "summary": "/customer/{cardcode} - GET",
         "tags": [],
         "responses": {
           "200": {
@@ -70,7 +70,7 @@
     },
     "customer/{cardcode}/orders": {
       "get": {
-        "summary": "Tilaukset - Orders",
+        "summary": "customer/{cardcode}/orders - GET",
         "tags": [],
         "responses": {},
         "operationId": "get-orders",
@@ -106,7 +106,7 @@
         }
       },
       "post": {
-        "summary": "Luo tilaus",
+        "summary": "customer/{cardcode}/orders - POST",
         "operationId": "post-orders",
         "responses": {
           "200": {
@@ -212,7 +212,7 @@
             }
           }
         },
-        "description": "Luo tilauksen asiakkaalle",
+        "description": "Luo asiakkaalle tilauksen",
         "requestBody": {
           "content": {
             "application/json": {
@@ -282,7 +282,7 @@
     },
     "customer/{cardcode}/itemavailability": {
       "get": {
-        "summary": "Tuotteiden saatavuus - Item availability",
+        "summary": "customer/{cardcode}/itemavailability - GET",
         "tags": [],
         "responses": {
           "200": {
@@ -329,7 +329,7 @@
           }
         },
         "operationId": "get-itemavailability",
-        "description": "Palauttaa tuotteiden saatavuuden",
+        "description": "Tuotteiden saatavuus",
         "parameters": [
           {
             "schema": {
@@ -341,7 +341,8 @@
               "example": "onlyOutOfStock=true"
             },
             "in": "query",
-            "name": "onlyOutOfStockItems"
+            "name": "onlyOutOfStockItems",
+            "description": "Jos true niin palauttaa vain tuotteet joita ei varastossa"
           }
         ],
         "requestBody": {
@@ -387,7 +388,7 @@
     },
     "customer/{cardcode}/shipments": {
       "get": {
-        "summary": "Lähetykset - Shipments",
+        "summary": "customer/{cardcode}/shipments - GET",
         "tags": [],
         "responses": {
           "200": {
@@ -470,7 +471,7 @@
           }
         },
         "operationId": "get-shipments",
-        "description": "Asiakkaalle tehdyt lähetykset"
+        "description": "Lähetykset asiakkaalle"
       },
       "parameters": [
         {
@@ -503,7 +504,7 @@
         }
       ],
       "get": {
-        "summary": "Tilaus - Order",
+        "summary": "/customer/{cardcode}/orders/{docnum} - GET",
         "tags": [],
         "responses": {},
         "operationId": "get-customer-cardcode-orders-docnum",
@@ -519,7 +520,7 @@
             }
           }
         },
-        "description": "Asiakkaan yksittäinen tilaus"
+        "description": "Palauttaa asiakkaan yksittäisen tilauksen"
       }
     }
   },
