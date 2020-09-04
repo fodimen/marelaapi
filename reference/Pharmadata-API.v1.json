@@ -640,8 +640,41 @@
         "title": "Shipment",
         "type": "object",
         "properties": {
-          "id": {
+          "shipmentid": {
             "type": "string"
+          },
+          "cardcode": {
+            "type": "string"
+          },
+          "receivername": {
+            "type": "string"
+          },
+          "receiverstreet": {
+            "type": "string"
+          },
+          "receiverstreetno": {
+            "type": "string"
+          },
+          "receivercity": {
+            "type": "string"
+          },
+          "receiverzipcode": {
+            "type": "string"
+          },
+          "receivercountrycode": {
+            "type": "string"
+          },
+          "waybillnumber": {
+            "type": "string"
+          },
+          "datecreated": {
+            "type": "string"
+          },
+          "shipmentpacks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShipmentPack"
+            }
           }
         }
       },
@@ -736,8 +769,29 @@
         "title": "ShipmentPack",
         "type": "object",
         "properties": {
-          "id": {
+          "packid": {
             "type": "string"
+          },
+          "packtypename": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "packno": {
+            "type": "string"
+          },
+          "sscc": {
+            "type": "string"
+          },
+          "packlines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShipmentPackLine"
+            }
           }
         }
       },
@@ -745,7 +799,40 @@
         "title": "ShipmentPackLine",
         "type": "object",
         "properties": {
-          "id": {
+          "packlineid": {
+            "type": "string"
+          },
+          "itemcode": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "string"
+          },
+          "quantityordered": {
+            "type": "string"
+          },
+          "batch": {
+            "type": "string"
+          },
+          "expdate": {
+            "type": "string"
+          },
+          "unitpriceexvat": {
+            "type": "string"
+          },
+          "discountpercent": {
+            "type": "string"
+          },
+          "vatpercent": {
+            "type": "string"
+          },
+          "orderno": {
+            "type": "string"
+          },
+          "reference": {
             "type": "string"
           }
         }
