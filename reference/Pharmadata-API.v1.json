@@ -83,7 +83,24 @@
       "get": {
         "summary": "/{cardcode}/orders - GET",
         "tags": [],
-        "responses": {},
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
+                },
+                "examples": {
+                  "example": {}
+                }
+              }
+            }
+          }
+        },
         "operationId": "get-orders",
         "description": "Palauttaa asiakkaan tilaukset",
         "parameters": [
@@ -102,15 +119,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "orders": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Order"
-                    }
-                  }
-                }
+                "type": "object"
               }
             }
           }
@@ -331,6 +340,9 @@
                       }
                     }
                   }
+                },
+                "examples": {
+                  "example": {}
                 }
               }
             }
@@ -551,7 +563,19 @@
         "title": "Order",
         "type": "object",
         "x-examples": {
-          "example-1": {}
+          "example": {
+            "docnum": "",
+            "cardcode": "",
+            "cardname": "",
+            "vatnumber": "",
+            "createdate": "",
+            "docdate": "",
+            "docduedate": "",
+            "reference": "",
+            "docstatus": "O",
+            "isbackorder": false,
+            "orderrows": []
+          }
         },
         "properties": {
           "docnum": {
@@ -560,15 +584,18 @@
           },
           "cardcode": {
             "type": "string",
-            "description": "asiakasnumero"
+            "description": "asiakasnumero",
+            "maxLength": 15
           },
           "cardname": {
             "type": "string",
-            "description": "asiakkaan nimi"
+            "description": "asiakkaan nimi",
+            "maxLength": 100
           },
           "vatnumber": {
             "type": "string",
-            "description": "VAT-tunnus"
+            "description": "VAT-tunnus",
+            "maxLength": 32
           },
           "createdate": {
             "type": "string",
@@ -591,7 +618,11 @@
           },
           "docstatus": {
             "type": "string",
-            "description": "tilauksen tila (avoin/suljettu)"
+            "description": "tilauksen tila (avoin/suljettu)",
+            "enum": [
+              "O",
+              "C"
+            ]
           },
           "isbackorder": {
             "type": "boolean",
@@ -685,6 +716,20 @@
             ],
             "description": "rivin tila (avoin/suljettu)"
           }
+        },
+        "x-examples": {
+          "example": {
+            "itemcode": "",
+            "description": "",
+            "quantity": 10,
+            "openquantity": 5,
+            "unitprice": 1,
+            "discount": 50,
+            "unitnetprice": 0.5,
+            "linetotal": 5,
+            "vatpercent": 24,
+            "linestatus": "O"
+          }
         }
       },
       "ShipmentPack": {
@@ -707,11 +752,15 @@
       }
     },
     "securitySchemes": {
-      "Authorization": {
-        "name": "Basic",
-        "type": "apiKey",
-        "in": "header"
+      "apiKey": {
+        "type": "http",
+        "scheme": "basic"
       }
     }
-  }
+  },
+  "security": [
+    {
+      "apiKey": []
+    }
+  ]
 }
