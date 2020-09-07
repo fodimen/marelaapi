@@ -31,53 +31,37 @@
         "responses": {
           "200": {
             "description": "OK",
-            "headers": {}
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ""
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "customercode": {
+                      "type": "string"
+                    },
+                    "customername": {
+                      "type": "string"
+                    },
+                    "": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "./Customer.v1.json"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "get-customers-cardcode",
         "description": "Palauttaa tiedot asiakkuudesta",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "cardcode": {
-                    "type": "string",
-                    "description": "Medifonin asiakasnumero"
-                  },
-                  "cardname": {
-                    "type": "string",
-                    "description": "Asiakkaan nimi"
-                  },
-                  "": {
-                    "type": "array",
-                    "description": "Asiakkaaseen liittyvät asiakkuudet",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "cardcode": {
-                          "type": "string",
-                          "description": "Asiakasnumero"
-                        },
-                        "cardname": {
-                          "type": "string",
-                          "description": "Asiakkaan nimi"
-                        }
-                      }
-                    }
-                  }
-                },
-                "required": [
-                  "cardcode",
-                  "cardname",
-                  ""
-                ]
-              }
-            }
-          },
-          "description": ""
-        },
         "parameters": []
       }
     },
