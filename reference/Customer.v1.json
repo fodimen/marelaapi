@@ -12,5 +12,8 @@
       "maxLength": 100,
       "minLength": 1
     }
-  }
+  },
+  "x-tags": [
+    "Customer"
+  ]
 }

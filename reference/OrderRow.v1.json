@@ -5,5 +5,8 @@
     "id": {
       "type": "string"
     }
-  }
+  },
+  "x-tags": [
+    "Orders"
+  ]
 }

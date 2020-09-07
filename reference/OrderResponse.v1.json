@@ -80,5 +80,9 @@
     "deliverywithnextorder",
     "status",
     "orderrows"
-  ]
+  ],
+  "x-tags": [
+    "Orders"
+  ],
+  "description": ""
 }

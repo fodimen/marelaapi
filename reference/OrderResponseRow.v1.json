@@ -62,5 +62,9 @@
     "price",
     "status",
     "errorinfo"
-  ]
+  ],
+  "x-tags": [
+    "Orders"
+  ],
+  "description": ""
 }

@@ -1,9 +1,12 @@
 {
   "title": "ShipmentPackLine",
   "type": "object",
+  "x-examples": {
+    "example-1": {}
+  },
   "properties": {
     "packlineid": {
-      "type": "string"
+      "type": "integer"
     },
     "itemcode": {
       "type": "string",
@@ -45,7 +48,7 @@
       "maxLength": 100
     }
   },
-  "x-examples": {
-    "example-1": {}
-  }
+  "x-tags": [
+    "Shipments"
+  ]
 }

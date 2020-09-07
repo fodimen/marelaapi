@@ -2,22 +2,26 @@
   "title": "Item",
   "type": "object",
   "properties": {
-          "itemcode": {
-            "type": "string"
-          },
-          "itemname": {
-            "type": "string"
-          },
-          "onhand": {
-            "type": "number"
-          },
-          "expirationdateonsale": {
-            "type": "string",
-            "format": "date"
-          },
-          "availablefrom": {
-            "type": "string",
-            "format": "date"
-          }
-        }
+    "itemcode": {
+      "type": "string"
+    },
+    "itemname": {
+      "type": "string"
+    },
+    "onhand": {
+      "type": "number"
+    },
+    "expirationdateonsale": {
+      "type": "string",
+      "format": "date"
+    },
+    "availablefrom": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "x-tags": [
+    "Items"
+  ],
+  "description": ""
 }

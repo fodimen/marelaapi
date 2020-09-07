@@ -3,22 +3,25 @@
   "type": "object",
   "properties": {
     "packid": {
-      "type": "string"
+      "type": "integer"
     },
     "packtypename": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 50
     },
     "weight": {
-      "type": "string"
+      "type": "number"
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100
     },
     "packno": {
-      "type": "string"
+      "type": "integer"
     },
     "sscc": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 20
     },
     "packlines": {
       "type": "array",
@@ -26,5 +29,8 @@
         "$ref": "./ShipmentPackLine.v1.json"
       }
     }
-  }
+  },
+  "x-tags": [
+    "Shipments"
+  ]
 }

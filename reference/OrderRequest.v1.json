@@ -38,5 +38,9 @@
     "customercode",
     "customername"
   ],
-  "x-examples": {}
+  "x-examples": {},
+  "x-tags": [
+    "Orders"
+  ],
+  "description": ""
 }
