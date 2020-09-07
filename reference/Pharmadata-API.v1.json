@@ -300,18 +300,19 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "items": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "./Item.v1.json"
-                      }
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "./Item.v1.json"
                   }
                 },
                 "examples": {
                   "example": {}
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
                 }
               }
             }
