@@ -304,57 +304,9 @@
                   "items": {
                     "$ref": "./Item.v1.json"
                   }
-                },
-                "examples": {
-                  "example": {}
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
                 }
               }
             }
-          },
-          "": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "./Item.v1.json"
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "value": [
-                      {
-                        "itemcode": "T654321",
-                        "itemname": "Testituote erällä",
-                        "onhand": 1000,
-                        "expirationdateonsale": "2025-01-12",
-                        "availablefrom": null
-                      },
-                      {
-                        "itemcode": "T654321",
-                        "itemname": "Testituote erällä",
-                        "onhand": 0,
-                        "expirationdateonsale": null,
-                        "availablefrom": "2025-01-12"
-                      }
-                    ]
-                  }
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            },
-            "description": ""
           }
         },
         "operationId": "get-itemavailability",
