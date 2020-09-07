@@ -1,0 +1,9 @@
+{
+  "title": "OrderRow",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    }
+  }
+}

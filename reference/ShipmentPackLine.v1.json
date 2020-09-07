@@ -1,0 +1,9 @@
+{
+  "title": "ShipmentPackLine",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "OrderResponseRow",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    }
+  }
+}

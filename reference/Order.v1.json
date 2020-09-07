@@ -1,0 +1,51 @@
+{
+  "title": "Order",
+  "type": "object",
+"properties": {
+                  "cardcode": {
+                    "type": "string",
+                    "description": "Medifonin asiakasnumero"
+                  },
+                  "cardname": {
+                    "type": "string",
+                    "description": "Asiakkaan nimi"
+                  },
+                  "reference": {
+                    "type": "string",
+                    "description": "Tilausviite"
+                  },
+                  "duedate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Toimituspäivä. "
+                  },
+                  "deliverywithnextorder": {
+                    "type": "boolean",
+                    "description": "Toimitetaanko tilaus seuraavan tilauksen yhteydessä"
+                  },
+                  "orderrows": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "itemcode": {
+                          "type": "string",
+                          "description": "Medifonin tuotenumero"
+                        },
+                        "quantity": {
+                          "type": "integer",
+                          "description": "Tilattava määrä"
+                        }
+                      },
+                      "required": [
+                        "itemcode",
+                        "quantity"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "cardcode",
+                  "cardname"
+                ]
+}

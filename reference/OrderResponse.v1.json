@@ -1,0 +1,104 @@
+{
+  "title": "OrderResponse",
+  "type": "object",
+  "properties": {
+    "cardcode": {
+      "type": "string",
+      "description": "Medifonin asiakasnumero"
+    },
+                    "cardname": {
+                      "type": "string",
+                      "description": "Asiakkaan nimi"
+                    },
+                    "lictradnum": {
+                      "type": "string",
+                      "description": "VAT-tunnus"
+                    },
+                    "reference": {
+                      "type": "string",
+                      "description": "Tilausviite"
+                    },
+                    "createdate": {
+                      "type": "string",
+                      "description": "Tilauksen luomispäivä",
+                      "format": "date-time"
+                    },
+                    "docdate": {
+                      "type": "string",
+                      "description": "Tilauspäivä",
+                      "format": "date-time"
+                    },
+                    "duedate": {
+                      "type": "string",
+                      "description": "Toimituspäivä",
+                      "format": "date-time"
+                    },
+                    "deliverywithnextorder": {
+                      "type": "boolean",
+                      "description": "Toimitetaanko tilaus seuraavan tilauksen yhteydessä"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Tilauksen tila"
+                    },
+                    "orderrows": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "itemcode": {
+                            "type": "string",
+                            "description": "Medifonin tuotenumero"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Tuotteen kuvaus"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "description": "Tilausmäärä"
+                          },
+                          "pricebefdi": {
+                            "type": "number",
+                            "description": "Alentamaton kappalehinta"
+                          },
+                          "discountpercent": {
+                            "type": "number",
+                            "description": "Alennus%"
+                          },
+                          "price": {
+                            "type": "number",
+                            "description": "Alennettu kappalehinta"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "Tilausrivin tila"
+                          },
+                          "errorinfo": {
+                            "type": "string",
+                            "description": "Jos tilausivi on virheellinen palauttaa virheen"
+                          }
+                        },
+                        "required": [
+                          "itemcode",
+                          "description",
+                          "quantity",
+                          "pricebefdi",
+                          "discountpercent",
+                          "price",
+                          "errorinfo"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "cardcode",
+                    "cardname",
+                    "lictradnum",
+                    "reference",
+                    "createdate",
+                    "docdate",
+                    "deliverywithnextorder",
+                    "orderrows"
+                  ]
+                }

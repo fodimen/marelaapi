@@ -1,0 +1,9 @@
+{
+  "title": "Shipment",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    }
+  }
+}
