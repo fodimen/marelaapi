@@ -2,8 +2,47 @@
   "title": "OrderResponseRow",
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string"
+    "itemcode": {
+      "type": "string",
+      "description": "Medifonin tuotenumero"
+    },
+    "description": {
+      "type": "string",
+      "description": "Tuotteen kuvaus"
+    },
+    "quantity": {
+      "type": "integer",
+      "description": "Tilausmäärä"
+    },
+    "pricebefdi": {
+      "type": "number",
+      "description": "Alentamaton kappalehinta"
+    },
+    "discountpercent": {
+      "type": "number",
+      "description": "Alennus%"
+    },
+    "price": {
+      "type": "number",
+      "description": "Alennettu kappalehinta"
+    },
+    "status": {
+      "type": "string",
+      "description": "Tilausrivin tila"
+    },
+    "errorinfo": {
+      "type": "string",
+      "description": "Jos tilausivi on virheellinen palauttaa virheen"
     }
-  }
+  },
+  "required": [
+    "itemcode",
+    "description",
+    "quantity",
+    "pricebefdi",
+    "discountpercent",
+    "price",
+    "status",
+    "errorinfo"
+  ]
 }

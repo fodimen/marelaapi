@@ -25,7 +25,9 @@
       ],
       "get": {
         "summary": "/{cardcode} - GET",
-        "tags": [],
+        "tags": [
+          "Customer"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -82,7 +84,6 @@
     "/{cardcode}/orders": {
       "get": {
         "summary": "/{cardcode}/orders - GET",
-        "tags": [],
         "responses": {
           "200": {
             "description": "OK",
@@ -123,7 +124,10 @@
               }
             }
           }
-        }
+        },
+        "tags": [
+          "Orders"
+        ]
       },
       "post": {
         "summary": "/{cardcode}/orders - POST",
@@ -246,61 +250,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "cardcode": {
-                    "type": "string",
-                    "description": "Medifonin asiakasnumero"
-                  },
-                  "cardname": {
-                    "type": "string",
-                    "description": "Asiakkaan nimi"
-                  },
-                  "reference": {
-                    "type": "string",
-                    "description": "Tilausviite"
-                  },
-                  "duedate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Toimituspäivä. "
-                  },
-                  "deliverywithnextorder": {
-                    "type": "boolean",
-                    "description": "Toimitetaanko tilaus seuraavan tilauksen yhteydessä"
-                  },
-                  "orderrows": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "itemcode": {
-                          "type": "string",
-                          "description": "Medifonin tuotenumero"
-                        },
-                        "quantity": {
-                          "type": "integer",
-                          "description": "Tilattava määrä"
-                        }
-                      },
-                      "required": [
-                        "itemcode",
-                        "quantity"
-                      ]
-                    }
-                  }
-                },
-                "required": [
-                  "cardcode",
-                  "cardname"
-                ]
-              },
-              "examples": {
-                "example-1": {}
+                "$ref": "#/components/schemas/Order"
               }
             }
           }
-        }
+        },
+        "tags": [
+          "Orders"
+        ]
       },
       "parameters": [
         {
@@ -316,7 +273,9 @@
     "/{cardcode}/itemavailability": {
       "get": {
         "summary": "/{cardcode}/itemavailability - GET",
-        "tags": [],
+        "tags": [
+          "Items"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -354,10 +313,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Item"
-                  }
+                  "$ref": "./Item.v1.json"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
                 }
               }
             },
@@ -425,7 +387,9 @@
     "/{cardcode}/shipments": {
       "get": {
         "summary": "/{cardcode}/shipments - GET",
-        "tags": [],
+        "tags": [
+          "Shipments"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -541,7 +505,9 @@
       ],
       "get": {
         "summary": "/{cardcode}/orders/{docnum} - GET",
-        "tags": [],
+        "tags": [
+          "Orders"
+        ],
         "responses": {},
         "operationId": "get-customer-cardcode-orders-docnum",
         "requestBody": {

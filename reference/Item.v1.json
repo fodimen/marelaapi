@@ -2,8 +2,22 @@
   "title": "Item",
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string"
-    }
-  }
+          "itemcode": {
+            "type": "string"
+          },
+          "itemname": {
+            "type": "string"
+          },
+          "onhand": {
+            "type": "number"
+          },
+          "expirationdateonsale": {
+            "type": "string",
+            "format": "date"
+          },
+          "availablefrom": {
+            "type": "string",
+            "format": "date"
+          }
+        }
 }
