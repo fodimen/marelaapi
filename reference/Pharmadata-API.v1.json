@@ -60,6 +60,28 @@
                     "customercode",
                     "customername"
                   ]
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "customercode": "00001",
+                      "customername": "Apoteekki",
+                      "parentof": [
+                        {
+                          "customercode": "00002",
+                          "customername": "Apoteekin Oy"
+                        },
+                        {
+                          "customercode": "00003",
+                          "customername": "Apoteekki Robotti"
+                        },
+                        {
+                          "customercode": "00001",
+                          "customername": "Apoteekki Omakäyttö"
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }

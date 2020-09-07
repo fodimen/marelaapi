@@ -18,7 +18,14 @@
       "itemname": "Testituote erällä",
       "onhand": 0,
       "expirationdateonsale": null,
-      "availablefrom": ""
+      "availablefrom": "2025-01-12"
+    },
+    "example-3": {
+      "itemcode": "T654321",
+      "itemname": "Testituote erällä",
+      "onhand": 1000,
+      "expirationdateonsale": "2025-01-12",
+      "availablefrom": null
     }
   },
   "properties": {

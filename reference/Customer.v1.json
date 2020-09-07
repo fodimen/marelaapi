@@ -19,5 +19,11 @@
   "required": [
     "customercode",
     "customername"
-  ]
+  ],
+  "x-examples": {
+    "example-1": {
+      "customercode": "00001",
+      "customername": "Apoteekki"
+    }
+  }
 }
