@@ -1,6 +1,11 @@
 {
   "title": "OrderRequest",
   "type": "object",
+  "x-examples": {},
+  "x-tags": [
+    "Orders"
+  ],
+  "description": "",
   "properties": {
     "customercode": {
       "type": "string",
@@ -30,17 +35,12 @@
     "orderrows": {
       "type": "array",
       "items": {
-        "$ref": "./OrderRow.v1.json"
+        "$ref": "./OrderRequestRow.v1.json"
       }
     }
   },
   "required": [
     "customercode",
     "customername"
-  ],
-  "x-examples": {},
-  "x-tags": [
-    "Orders"
-  ],
-  "description": ""
+  ]
 }
