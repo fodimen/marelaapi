@@ -544,34 +544,6 @@
         },
         "description": "Palauttaa asiakkaan yksittäisen tilauksen"
       }
-    },
-    "/{cardcode}/itemavailability/array": {
-      "parameters": [
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "cardcode",
-          "in": "path",
-          "required": true
-        }
-      ],
-      "get": {
-        "summary": "List ItemAvailability By ItemArray",
-        "tags": [],
-        "responses": {},
-        "operationId": "get-cardcode-itemavailability-array",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
