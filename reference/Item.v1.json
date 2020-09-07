@@ -1,10 +1,38 @@
 {
-  "title": "Item",
   "type": "object",
-  "x-tags": [
-    "Items"
+  "properties": {
+    "itemcode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 15
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "onhand": {
+      "type": "number"
+    },
+    "expirationdateonsale": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "availablefrom": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    }
+  },
+  "required": [
+    "itemcode",
+    "description"
   ],
-  "description": "",
   "x-examples": {
     "example-1": {
       "itemcode": "T123456",
@@ -27,37 +55,5 @@
       "expirationdateonsale": "2025-01-12",
       "availablefrom": null
     }
-  },
-  "properties": {
-    "itemcode": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 15
-    },
-    "itemname": {
-      "type": "string"
-    },
-    "onhand": {
-      "type": "number"
-    },
-    "expirationdateonsale": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "format": "date"
-    },
-    "availablefrom": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "format": "date"
-    }
-  },
-  "required": [
-    "itemcode",
-    "itemname",
-    "onhand"
-  ]
+  }
 }

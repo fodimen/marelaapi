@@ -305,18 +305,7 @@
                     "items": {
                       "type": "array",
                       "items": {
-                        "type": "object",
-                        "properties": {
-                          "itemcode": {
-                            "type": "string"
-                          },
-                          "itemname": {
-                            "type": "string"
-                          },
-                          "onhand": {
-                            "type": "string"
-                          }
-                        }
+                        "$ref": "./Item.v1.json"
                       }
                     }
                   }
@@ -331,7 +320,30 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./Item.v1.json"
+                  "type": "array",
+                  "items": {
+                    "$ref": "./Item.v1.json"
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "itemcode": "T654321",
+                        "itemname": "Testituote erällä",
+                        "onhand": 1000,
+                        "expirationdateonsale": "2025-01-12",
+                        "availablefrom": null
+                      },
+                      {
+                        "itemcode": "T654321",
+                        "itemname": "Testituote erällä",
+                        "onhand": 0,
+                        "expirationdateonsale": null,
+                        "availablefrom": "2025-01-12"
+                      }
+                    ]
+                  }
                 }
               },
               "application/xml": {
@@ -360,36 +372,7 @@
             "name": "onlyOutOfStockItems",
             "description": "Jos true niin palauttaa vain tuotteet joita ei varastossa"
           }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "itemcode": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "examples": {
-                "example": {
-                  "value": [
-                    {
-                      "itemcode": "000451"
-                    },
-                    {
-                      "itemcode": "9274097"
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        }
+        ]
       },
       "parameters": [
         {
