@@ -100,11 +100,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Order"
+                    "$ref": "./Order.v1.json"
                   }
-                },
-                "examples": {
-                  "example": {}
                 }
               }
             }
@@ -370,74 +367,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "Customer": {
-                      "type": "object",
-                      "properties": {
-                        "": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "ShipToCustomer": {
-                      "type": "object"
-                    },
-                    "ShipmentPackages": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "SSCC": {
-                            "type": "string"
-                          },
-                          "PackageType": {
-                            "type": "string"
-                          },
-                          "PackageLines": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "itemcode": {
-                                  "type": "string"
-                                },
-                                "vnr": {
-                                  "type": "string"
-                                },
-                                "description": {
-                                  "type": "string"
-                                },
-                                "deliveredquantity": {
-                                  "type": "number"
-                                },
-                                "orderedquantity": {
-                                  "type": "number"
-                                },
-                                "batchnumber": {
-                                  "type": "string"
-                                },
-                                "unitprice": {
-                                  "type": "number"
-                                },
-                                "unitnetprice": {
-                                  "type": "number"
-                                },
-                                "discountpercentage": {
-                                  "type": "number"
-                                },
-                                "ordernumber": {
-                                  "type": "string"
-                                },
-                                "orderreference": {
-                                  "type": "string"
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "./Shipment.v1.json"
                   }
                 }
               }
@@ -488,7 +420,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Order"
+                "$ref": "./Order.v1.json"
               },
               "examples": {
                 "example-1": {}
