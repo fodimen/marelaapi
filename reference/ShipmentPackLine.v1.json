@@ -2,7 +2,20 @@
   "title": "ShipmentPackLine",
   "type": "object",
   "x-examples": {
-    "example-1": {}
+    "example-1": {
+      "itemcode": "9229877",
+      "description": "Apteekki FluAcute Zinc+ anis 20 ml",
+      "quantity": 1,
+      "quantityordered": 1,
+      "batch": "1816450001",
+      "expdate": null,
+      "unitpriceexvat": 9.5,
+      "discountpercent": 100,
+      "price": 0,
+      "vatpercent": 24,
+      "orderno": 1,
+      "reference": 1
+    }
   },
   "properties": {
     "packlineid": {

@@ -51,5 +51,20 @@
   },
   "x-tags": [
     "Shipments"
-  ]
+  ],
+  "x-examples": {
+    "example-1": {
+      "shipmentid": 2,
+      "customercode": "75490",
+      "receivername": "Testiasiakas",
+      "receiverstreet": "Kadunnimi",
+      "receiverstreetno": "100",
+      "receivercity": "Helsinki",
+      "receiverzipcode": "00100",
+      "receivercountrycode": "FI",
+      "waybillnumber": 201022721849,
+      "datecreated": "YYYY-MM-DDTHH:mm:ss.sssZ",
+      "shipmentpacks": []
+    }
+  }
 }

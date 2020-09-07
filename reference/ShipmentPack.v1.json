@@ -32,5 +32,16 @@
   },
   "x-tags": [
     "Shipments"
-  ]
+  ],
+  "x-examples": {
+    "example-1": {
+      "packid": 1,
+      "packtypename": "Medifon laatikko pieni palautettava",
+      "weight": 5,
+      "description": "Terveydenhuollon tuotteita",
+      "packno": 1,
+      "sscc": "00164382770000100016",
+      "packlines": []
+    }
+  }
 }
