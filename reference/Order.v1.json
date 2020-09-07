@@ -65,5 +65,8 @@
     "isbackorder",
     "status",
     "orderrows"
-  ]
+  ],
+  "x-examples": {
+    "example-1": {}
+  }
 }

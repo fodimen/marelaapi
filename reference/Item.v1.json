@@ -5,6 +5,22 @@
     "Items"
   ],
   "description": "",
+  "x-examples": {
+    "example-1": {
+      "itemcode": "T123456",
+      "itemname": "Testituote",
+      "onhand": 100,
+      "expirationdateonsale": null,
+      "availablefrom": null
+    },
+    "example-2": {
+      "itemcode": "T654321",
+      "itemname": "Testituote erällä",
+      "onhand": 0,
+      "expirationdateonsale": null,
+      "availablefrom": ""
+    }
+  },
   "properties": {
     "itemcode": {
       "type": "string",
@@ -18,11 +34,17 @@
       "type": "number"
     },
     "expirationdateonsale": {
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "format": "date"
     },
     "availablefrom": {
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "format": "date"
     }
   },

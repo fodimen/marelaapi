@@ -268,7 +268,7 @@
     },
     "/{cardcode}/itemavailability": {
       "get": {
-        "summary": "Get ItemAvailability",
+        "summary": "Get Item Availability",
         "tags": [
           "Items"
         ],
