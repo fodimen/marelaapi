@@ -1,0 +1,23 @@
+{
+  "title": "OrderRequestRow",
+  "type": "object",
+  "x-examples": {
+    "example-1": {}
+  },
+  "properties": {
+    "itemcode": {
+      "type": "string",
+      "description": "Medifonin tuotenumero",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "quantity": {
+      "type": "number",
+      "description": "Tilattava määrä"
+    }
+  },
+  "required": [
+    "itemcode",
+    "quantity"
+  ]
+}

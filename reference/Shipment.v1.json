@@ -2,8 +2,41 @@
   "title": "Shipment",
   "type": "object",
   "properties": {
-    "id": {
+    "shipmentid": {
       "type": "string"
+    },
+    "cardcode": {
+      "type": "string"
+    },
+    "receivername": {
+      "type": "string"
+    },
+    "receiverstreet": {
+      "type": "string"
+    },
+    "receiverstreetno": {
+      "type": "string"
+    },
+    "receivercity": {
+      "type": "string"
+    },
+    "receiverzipcode": {
+      "type": "string"
+    },
+    "receivercountrycode": {
+      "type": "string"
+    },
+    "waybillnumber": {
+      "type": "string"
+    },
+    "datecreated": {
+      "type": "string"
+    },
+    "shipmentpacks": {
+      "type": "array",
+      "items": {
+        "$ref": "./ShipmentPack.v1.json"
+      }
     }
   }
 }

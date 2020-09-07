@@ -1,14 +1,14 @@
 {
-  "title": "Order",
+  "title": "OrderRequest",
   "type": "object",
   "properties": {
-    "cardcode": {
+    "customercode": {
       "type": "string",
       "description": "Medifonin asiakasnumero",
       "minLength": 1,
       "maxLength": 15
     },
-    "cardname": {
+    "customername": {
       "type": "string",
       "description": "Asiakkaan nimi",
       "minLength": 1,
@@ -35,7 +35,8 @@
     }
   },
   "required": [
-    "cardcode",
-    "cardname"
-  ]
+    "customercode",
+    "customername"
+  ],
+  "x-examples": {}
 }

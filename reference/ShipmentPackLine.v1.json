@@ -2,8 +2,50 @@
   "title": "ShipmentPackLine",
   "type": "object",
   "properties": {
-    "id": {
+    "packlineid": {
       "type": "string"
+    },
+    "itemcode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "quantityordered": {
+      "type": "number"
+    },
+    "batch": {
+      "type": "string",
+      "maxLength": 36
+    },
+    "expdate": {
+      "type": "string"
+    },
+    "unitpriceexvat": {
+      "type": "number"
+    },
+    "discountpercent": {
+      "type": "number"
+    },
+    "vatpercent": {
+      "type": "number"
+    },
+    "orderno": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "string",
+      "maxLength": 100
     }
+  },
+  "x-examples": {
+    "example-1": {}
   }
 }

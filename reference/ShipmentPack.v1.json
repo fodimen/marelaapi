@@ -2,8 +2,29 @@
   "title": "ShipmentPack",
   "type": "object",
   "properties": {
-    "id": {
+    "packid": {
       "type": "string"
+    },
+    "packtypename": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "packno": {
+      "type": "string"
+    },
+    "sscc": {
+      "type": "string"
+    },
+    "packlines": {
+      "type": "array",
+      "items": {
+        "$ref": "./ShipmentPackLine.v1.json"
+      }
     }
   }
 }

@@ -1,14 +1,29 @@
 {
   "title": "OrderResponse",
   "type": "object",
+  "x-examples": {
+    "example-1": {
+      "docnum": "",
+      "customercode": "",
+      "customername": "",
+      "vatnumber": "",
+      "createdate": "",
+      "docdate": "",
+      "docduedate": "",
+      "reference": "",
+      "docstatus": "O",
+      "isbackorder": false,
+      "orderrows": []
+    }
+  },
   "properties": {
-    "cardcode": {
+    "customercode": {
       "type": "string",
       "description": "Medifonin asiakasnumero",
       "minLength": 1,
       "maxLength": 15
     },
-    "cardname": {
+    "customername": {
       "type": "string",
       "description": "Asiakkaan nimi",
       "minLength": 1,
@@ -55,8 +70,8 @@
     }
   },
   "required": [
-    "cardcode",
-    "cardname",
+    "customercode",
+    "customername",
     "lictradnum",
     "reference",
     "createdate",

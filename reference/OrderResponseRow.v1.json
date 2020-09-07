@@ -1,17 +1,35 @@
 {
   "title": "OrderResponseRow",
   "type": "object",
+  "x-examples": {
+    "example-1": {
+      "itemcode": "",
+      "description": "",
+      "quantity": 10,
+      "openquantity": 5,
+      "unitprice": 1,
+      "discount": 50,
+      "unitnetprice": 0.5,
+      "linetotal": 5,
+      "vatpercent": 24,
+      "linestatus": "O"
+    }
+  },
   "properties": {
     "itemcode": {
       "type": "string",
-      "description": "Medifonin tuotenumero"
+      "description": "Medifonin tuotenumero",
+      "minLength": 1,
+      "maxLength": 50
     },
     "description": {
       "type": "string",
-      "description": "Tuotteen kuvaus"
+      "description": "Tuotteen kuvaus",
+      "minLength": 1,
+      "maxLength": 100
     },
     "quantity": {
-      "type": "integer",
+      "type": "number",
       "description": "Tilausmäärä"
     },
     "pricebefdi": {
