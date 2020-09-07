@@ -28,41 +28,43 @@
         "tags": [
           "Customer"
         ],
+        "operationId": "get-customers-cardcode",
+        "description": "Palauttaa tiedot asiakkuudesta",
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK",
-            "headers": {},
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": ""
-                }
-              },
-              "application/xml": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "customercode": {
-                      "type": "string"
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 15
                     },
                     "customername": {
-                      "type": "string"
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
                     },
-                    "": {
+                    "parentof": {
                       "type": "array",
                       "items": {
                         "$ref": "./Customer.v1.json"
                       }
                     }
-                  }
+                  },
+                  "required": [
+                    "customercode",
+                    "customername"
+                  ]
                 }
               }
             }
           }
-        },
-        "operationId": "get-customers-cardcode",
-        "description": "Palauttaa tiedot asiakkuudesta",
-        "parameters": []
+        }
       }
     },
     "/{cardcode}/orders": {
@@ -116,16 +118,6 @@
             "description": "Vain avoimet tilaukset"
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          },
-          "description": ""
-        },
         "tags": [
           "Orders"
         ]
