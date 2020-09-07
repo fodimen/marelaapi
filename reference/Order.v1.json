@@ -1,12 +1,69 @@
 {
   "title": "Order",
   "type": "object",
-  "properties": {
-    "id": {
-      "type": "string"
-    }
-  },
   "x-tags": [
     "Orders"
+  ],
+  "properties": {
+    "orderno": {
+      "type": "string"
+    },
+    "customercode": {
+      "type": "string",
+      "maxLength": 15
+    },
+    "customername": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "vatid": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "createdate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "orderdate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duedate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reference": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "deliverywithnextorder": {
+      "type": "boolean"
+    },
+    "isbackorder": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string"
+    },
+    "orderrows": {
+      "type": "array",
+      "items": {
+        "$ref": "./OrderRow.v1.json"
+      }
+    }
+  },
+  "required": [
+    "orderno",
+    "customercode",
+    "customername",
+    "vatid",
+    "createdate",
+    "orderdate",
+    "duedate",
+    "reference",
+    "deliverywithnextorder",
+    "isbackorder",
+    "status",
+    "orderrows"
   ]
 }

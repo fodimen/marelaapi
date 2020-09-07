@@ -1,12 +1,36 @@
 {
   "title": "OrderRow",
   "type": "object",
-  "properties": {
-    "id": {
-      "type": "string"
-    }
-  },
   "x-tags": [
     "Orders"
-  ]
+  ],
+  "properties": {
+    "itemcode": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "pricebefdi": {
+      "type": "number"
+    },
+    "discountpercent": {
+      "type": "number"
+    },
+    "price": {
+      "type": "number"
+    },
+    "linestatus": {
+      "type": "string",
+      "enum": [
+        "O",
+        "C"
+      ]
+    }
+  }
 }

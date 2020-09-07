@@ -1,6 +1,9 @@
 {
   "title": "Customer",
   "type": "object",
+  "x-tags": [
+    "Customer"
+  ],
   "properties": {
     "customercode": {
       "type": "string",
@@ -13,7 +16,8 @@
       "minLength": 1
     }
   },
-  "x-tags": [
-    "Customer"
+  "required": [
+    "customercode",
+    "customername"
   ]
 }
