@@ -3,34 +3,44 @@
   "type": "object",
   "properties": {
     "shipmentid": {
-      "type": "string"
+      "type": "integer"
     },
-    "cardcode": {
-      "type": "string"
+    "customercode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 15
     },
     "receivername": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
     },
     "receiverstreet": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100
     },
     "receiverstreetno": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100
     },
     "receivercity": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100
     },
     "receiverzipcode": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 20
     },
     "receivercountrycode": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 3
     },
     "waybillnumber": {
-      "type": "string"
+      "type": "integer"
     },
     "datecreated": {
-      "type": "string"
+      "type": "string",
+      "format": "date-time"
     },
     "shipmentpacks": {
       "type": "array",
