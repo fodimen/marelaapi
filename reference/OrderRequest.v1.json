@@ -1,7 +1,9 @@
 {
   "title": "OrderRequest",
   "type": "object",
-  "x-examples": {},
+  "x-examples": {
+    "example-1": {}
+  },
   "x-tags": [
     "Orders"
   ],

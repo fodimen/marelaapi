@@ -4,33 +4,66 @@
   "x-tags": [
     "Orders"
   ],
+  "x-examples": {
+    "example-1": {
+      "itemcode": "9200661",
+      "description": "Natriumvetykarbonaatti 1 g 100 tabl.",
+      "quantity": 4,
+      "pricebefdi": 7.7,
+      "discountpercent": 0,
+      "price": 7.7,
+      "vatpercent": 23,
+      "linetotal": 30.8,
+      "freetext": "",
+      "linestatus": "C"
+    }
+  },
   "properties": {
     "itemcode": {
       "type": "string",
-      "maxLength": 50
+      "maxLength": 50,
+      "description": "Medifon tuotenumero"
     },
     "description": {
       "type": "string",
-      "maxLength": 100
+      "maxLength": 100,
+      "description": "Tuotteen kuvaus"
     },
     "quantity": {
-      "type": "number"
+      "type": "number",
+      "description": "Määrä"
     },
     "pricebefdi": {
-      "type": "number"
+      "type": "number",
+      "description": "Alentamaton kappalehinta"
     },
     "discountpercent": {
-      "type": "number"
+      "type": "number",
+      "description": "Alennus-%"
     },
     "price": {
-      "type": "number"
+      "type": "number",
+      "description": "Alennettu kappalehinta"
+    },
+    "vatpercent": {
+      "type": "number",
+      "description": "Veroluokka"
+    },
+    "linetotal": {
+      "type": "number",
+      "description": "Rivin veroton alennettu loppusumma"
+    },
+    "freetext": {
+      "type": "string",
+      "maxLength": 100
     },
     "linestatus": {
       "type": "string",
       "enum": [
         "O",
         "C"
-      ]
+      ],
+      "description": "Onko rivi avoin/suljettu (O,C)"
     }
   }
 }

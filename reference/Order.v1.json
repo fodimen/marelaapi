@@ -4,46 +4,84 @@
   "x-tags": [
     "Orders"
   ],
+  "x-examples": {
+    "example-1": {
+      "orderno": 567,
+      "customercode": "00001",
+      "customername": "Apoteekki",
+      "createdate": "2012-09-03T00:00:00",
+      "orderdate": "2012-09-03T00:00:00",
+      "duedate": "2012-09-03T00:00:00",
+      "doctotalexvat": 30.8,
+      "vatsum": 7.08,
+      "doctotal": 37.88,
+      "reference": " ",
+      "isbackorder": false,
+      "deliverywithnextorder": false,
+      "status": "C",
+      "orderrows": []
+    }
+  },
   "properties": {
     "orderno": {
-      "type": "string"
+      "type": "string",
+      "description": "Medifon tilausnumero"
     },
     "customercode": {
       "type": "string",
-      "maxLength": 15
+      "maxLength": 15,
+      "description": "Medifon Asiakasnumero"
     },
     "customername": {
       "type": "string",
-      "maxLength": 100
-    },
-    "vatid": {
-      "type": "string",
-      "maxLength": 32
+      "maxLength": 100,
+      "description": "Asiakas"
     },
     "createdate": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Tilauksen luontipäivä"
     },
     "orderdate": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Tilauspäivä"
     },
     "duedate": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Toimituspäivä"
+    },
+    "vatsum": {
+      "type": "number",
+      "description": "Tilauksen verosumma"
+    },
+    "doctotal": {
+      "type": "number",
+      "description": "Tilauksen loppusumma"
     },
     "reference": {
       "type": "string",
-      "maxLength": 100
+      "maxLength": 100,
+      "description": "Asiakkaan viite"
     },
     "deliverywithnextorder": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Toimitetaanko tilaus seuraavan tilauksen yhteydessä"
     },
     "isbackorder": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Onko tilaus jälkitoimituksessa"
     },
     "status": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "O",
+        "C"
+      ],
+      "description": "Onko tilaus avoin/suljettu (O,C)",
+      "minLength": 1,
+      "maxLength": 1
     },
     "orderrows": {
       "type": "array",
@@ -56,17 +94,15 @@
     "orderno",
     "customercode",
     "customername",
-    "vatid",
     "createdate",
     "orderdate",
     "duedate",
+    "vatsum",
+    "doctotal",
     "reference",
     "deliverywithnextorder",
     "isbackorder",
     "status",
     "orderrows"
-  ],
-  "x-examples": {
-    "example-1": {}
-  }
+  ]
 }
