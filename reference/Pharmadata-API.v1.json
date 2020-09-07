@@ -304,6 +304,26 @@
                   "items": {
                     "$ref": "./Item.v1.json"
                   }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "itemcode": "T123456",
+                        "itemname": "Testituote",
+                        "onhand": 100,
+                        "expirationdateonsale": null,
+                        "availablefrom": null
+                      },
+                      {
+                        "itemcode": "T654321",
+                        "itemname": "Testituote erällä",
+                        "onhand": 0,
+                        "expirationdateonsale": null,
+                        "availablefrom": "2025-01-12"
+                      }
+                    ]
+                  }
                 }
               }
             }
