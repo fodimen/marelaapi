@@ -16,6 +16,10 @@
       "orderrows": []
     }
   },
+  "x-tags": [
+    "Orders"
+  ],
+  "description": "",
   "properties": {
     "customercode": {
       "type": "string",
@@ -44,7 +48,7 @@
       "description": "Tilauksen luomispäivä",
       "format": "date-time"
     },
-    "docdate": {
+    "orderdate": {
       "type": "string",
       "description": "Tilauspäivä",
       "format": "date-time"
@@ -75,14 +79,10 @@
     "lictradnum",
     "reference",
     "createdate",
-    "docdate",
+    "orderdate",
     "duedate",
     "deliverywithnextorder",
     "status",
     "orderrows"
-  ],
-  "x-tags": [
-    "Orders"
-  ],
-  "description": ""
+  ]
 }
