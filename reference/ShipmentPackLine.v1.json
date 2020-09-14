@@ -21,6 +21,7 @@
   "x-tags": [
     "Shipments"
   ],
+  "description": "",
   "properties": {
     "packlineid": {
       "type": "integer",
@@ -76,12 +77,30 @@
     },
     "orderno": {
       "type": "string",
-      "description": "Asiakkaan tilausnumero"
+      "description": "Tilausnumero"
     },
     "reference": {
       "type": "string",
       "maxLength": 100,
       "description": "Asiakkaan viite"
+    },
+    "customerorderno": {
+      "type": "string",
+      "description": "Asiakkaan tilausnumero"
     }
-  }
+  },
+  "required": [
+    "packlineid",
+    "linenumber",
+    "itemcode",
+    "quantity",
+    "quantityordered",
+    "batch",
+    "expdate",
+    "unitpriceexvat",
+    "discountpercent",
+    "vatpercent",
+    "orderno",
+    "reference"
+  ]
 }

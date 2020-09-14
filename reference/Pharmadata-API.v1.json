@@ -778,52 +778,6 @@
           "required": true
         }
       ]
-    },
-    "/{customercode}/orders/{orderno}": {
-      "parameters": [
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "orderno",
-          "in": "path",
-          "required": true
-        },
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "customercode",
-          "in": "path",
-          "required": true
-        }
-      ],
-      "get": {
-        "summary": "Get Order",
-        "tags": [
-          "Orders"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "./Order.v1.json"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "operationId": "get-customer-cardcode-orders-docnum",
-        "description": "Palauttaa asiakkaan yksittäisen tilauksen"
-      }
     }
   },
   "components": {
