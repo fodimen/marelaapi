@@ -3,16 +3,14 @@
   "type": "object",
   "x-examples": {
     "example-1": {
-      "docnum": "",
-      "customercode": "",
-      "customername": "",
-      "vatnumber": "",
-      "createdate": "",
-      "docdate": "",
-      "docduedate": "",
-      "reference": "",
-      "docstatus": "O",
-      "isbackorder": false,
+      "customerorderno": 71,
+      "customercode": "75490",
+      "customername": "Testiasiakas",
+      "orderdate": "2020-09-14T09:54:13.687",
+      "duedate": "2020-10-23T00:00:00",
+      "reference": "kukkuluuruu",
+      "deliverywithnextorder": true,
+      "status": "DRAFT",
       "orderrows": []
     }
   },
@@ -21,6 +19,9 @@
   ],
   "description": "",
   "properties": {
+    "customerorderno": {
+      "type": "integer"
+    },
     "customercode": {
       "type": "string",
       "description": "Medifonin asiakasnumero",
@@ -39,7 +40,10 @@
       "maxLength": 32
     },
     "reference": {
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Tilausviite",
       "maxLength": 100
     },
@@ -74,6 +78,7 @@
     }
   },
   "required": [
+    "customerorderno",
     "customercode",
     "customername",
     "lictradnum",

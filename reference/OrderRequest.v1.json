@@ -2,7 +2,28 @@
   "title": "OrderRequest",
   "type": "object",
   "x-examples": {
-    "example-1": {}
+    "example-1": {
+      "customerorderno": 72,
+      "customercode": "75490",
+      "customername": "Testiasiakas",
+      "reference": "kukkuluuruu",
+      "duedate": "2020-10-23T00:00:00",
+      "deliverywithnextorder": true,
+      "orderrows": [
+        {
+          "itemcode": "9236180",
+          "quantity": 10
+        },
+        {
+          "itemcode": "9248379",
+          "quantity": 10
+        },
+        {
+          "itemcode": "T121212",
+          "quantity": 10
+        }
+      ]
+    }
   },
   "x-tags": [
     "Orders"
@@ -43,6 +64,7 @@
   },
   "required": [
     "customercode",
-    "customername"
+    "customername",
+    "duedate"
   ]
 }

@@ -3,18 +3,42 @@
   "type": "object",
   "x-examples": {
     "example-1": {
-      "itemcode": "",
-      "description": "",
+      "itemcode": "9236180",
+      "description": "Catapult Cat - Ravintolisä 16 x 6 tabl",
       "quantity": 10,
-      "openquantity": 5,
-      "unitprice": 1,
-      "discount": 50,
-      "unitnetprice": 0.5,
-      "linetotal": 5,
-      "vatpercent": 24,
-      "linestatus": "O"
+      "pricebefdi": 81.92,
+      "discountpercent": 0,
+      "price": 81.92,
+      "freetext": "",
+      "linestatus": "DRAFT"
+    },
+    "example-2": {
+      "itemcode": "9248379",
+      "description": "APTEEKKI FluAcute Yskä 20 ml",
+      "quantity": 10,
+      "pricebefdi": 0,
+      "discountpercent": 0,
+      "price": 0,
+      "freetext": "",
+      "linestatus": "VALIDATIONERROR",
+      "errorinfo": "Tuotteen tilaaminen on sallittu vain Apteekkariliiton jäsenapteekeille"
+    },
+    "example-3": {
+      "itemcode": "T121212",
+      "description": "Testituote Kolli",
+      "quantity": 10,
+      "pricebefdi": 0,
+      "discountpercent": 0,
+      "price": 0,
+      "freetext": "",
+      "linestatus": "VALIDATIONERROR",
+      "errorinfo": "Tuote ei ole jakelussa"
     }
   },
+  "x-tags": [
+    "Orders"
+  ],
+  "description": "",
   "properties": {
     "itemcode": {
       "type": "string",
@@ -44,7 +68,11 @@
       "type": "number",
       "description": "Alennettu kappalehinta"
     },
-    "status": {
+    "freetext": {
+      "type": "string",
+      "description": "Ei käytössä"
+    },
+    "linestatus": {
       "type": "string",
       "description": "Tilausrivin tila"
     },
@@ -60,11 +88,7 @@
     "pricebefdi",
     "discountpercent",
     "price",
-    "status",
-    "errorinfo"
-  ],
-  "x-tags": [
-    "Orders"
-  ],
-  "description": ""
+    "freetext",
+    "linestatus"
+  ]
 }
