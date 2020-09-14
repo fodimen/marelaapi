@@ -209,6 +209,15 @@
             "in": "query",
             "name": "onlyOpenOrders",
             "description": "Vain avoimet tilaukset"
+          },
+          {
+            "schema": {
+              "type": "integer",
+              "example": 16
+            },
+            "in": "query",
+            "name": "customerOrderNo",
+            "description": "Hae vain tilaus jonka customerorderno = ?"
           }
         ],
         "tags": [
