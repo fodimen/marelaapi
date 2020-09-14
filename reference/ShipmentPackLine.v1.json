@@ -3,65 +3,85 @@
   "type": "object",
   "x-examples": {
     "example-1": {
-      "itemcode": "9229877",
-      "description": "Apteekki FluAcute Zinc+ anis 20 ml",
-      "quantity": 1,
-      "quantityordered": 1,
-      "batch": "1816450001",
+      "packlineid": 62889,
+      "linenumber": 1,
+      "itemcode": "T123456",
+      "description": "Testituote verkkokaupparuksi päällä",
+      "quantity": 3,
+      "quantityordered": 3,
+      "batch": "",
       "expdate": null,
-      "unitpriceexvat": 9.5,
-      "discountpercent": 100,
-      "price": 0,
-      "vatpercent": 24,
-      "orderno": 1,
-      "reference": 1
-    }
-  },
-  "properties": {
-    "packlineid": {
-      "type": "integer"
-    },
-    "itemcode": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 50
-    },
-    "description": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 100
-    },
-    "quantity": {
-      "type": "number"
-    },
-    "quantityordered": {
-      "type": "number"
-    },
-    "batch": {
-      "type": "string",
-      "maxLength": 36
-    },
-    "expdate": {
-      "type": "string"
-    },
-    "unitpriceexvat": {
-      "type": "number"
-    },
-    "discountpercent": {
-      "type": "number"
-    },
-    "vatpercent": {
-      "type": "number"
-    },
-    "orderno": {
-      "type": "string"
-    },
-    "reference": {
-      "type": "string",
-      "maxLength": 100
+      "unitpriceexvat": 7,
+      "discountpercent": 17,
+      "vatpercent": 0,
+      "orderno": 361369,
+      "reference": "testi 0117"
     }
   },
   "x-tags": [
     "Shipments"
-  ]
+  ],
+  "properties": {
+    "packlineid": {
+      "type": "integer",
+      "description": "Pakkausrivin Id"
+    },
+    "linenumber": {
+      "type": "integer",
+      "description": "Rivinumero pakkauksessa"
+    },
+    "itemcode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "Tuotenumero"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "Tuotekuvaus"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "Mää"
+    },
+    "quantityordered": {
+      "type": "number",
+      "description": "Tilausmäärä"
+    },
+    "batch": {
+      "type": "string",
+      "maxLength": 36,
+      "description": "Erä"
+    },
+    "expdate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Eräpäivä"
+    },
+    "unitpriceexvat": {
+      "type": "number",
+      "description": "Veroton alentamaton kappalehinta"
+    },
+    "discountpercent": {
+      "type": "number",
+      "description": "Alennus-%"
+    },
+    "vatpercent": {
+      "type": "number",
+      "description": "Veroluokka"
+    },
+    "orderno": {
+      "type": "string",
+      "description": "Asiakkaan tilausnumero"
+    },
+    "reference": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Asiakkaan viite"
+    }
+  }
 }

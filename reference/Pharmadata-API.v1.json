@@ -527,6 +527,215 @@
                   "items": {
                     "$ref": "./Shipment.v1.json"
                   }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "shipmentid": 6907,
+                        "customercode": "75490",
+                        "receivername": "Testiasiakas",
+                        "receiverstreet": "Kadunnimi 100",
+                        "receivercity": "Helsinki",
+                        "receiverzipcode": "00100",
+                        "receivercountrycode": "FI",
+                        "waybillnumber": 201022813320,
+                        "datecreated": "2020-02-03T17:07:38.943",
+                        "shipmentpacks": [
+                          {
+                            "packid": 18111,
+                            "packtypename": "Medifon laatikko pieni palautettava",
+                            "weight": 50,
+                            "description": "Terveydenhuollon tuotteita",
+                            "packno": 1,
+                            "sscc": "00164382770726781117",
+                            "packlines": [
+                              {
+                                "packlineid": 168175,
+                                "linenumber": 1,
+                                "itemcode": "T123456",
+                                "description": "Testituote verkkokaupparuksi päällä",
+                                "quantity": 1,
+                                "quantityordered": 1,
+                                "batch": "",
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 369949,
+                                "reference": ""
+                              }
+                            ]
+                          },
+                          {
+                            "packid": 18140,
+                            "packtypename": "Medifon laatikko pieni palautettava",
+                            "weight": 5,
+                            "description": "Terveydenhuollon tuotteita",
+                            "packno": 2,
+                            "sscc": "00164382770729681407",
+                            "packlines": [
+                              {
+                                "packlineid": 168484,
+                                "linenumber": 1,
+                                "itemcode": "T123456",
+                                "description": "Testituote verkkokaupparuksi päällä",
+                                "quantity": 2,
+                                "quantityordered": 2,
+                                "batch": "",
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 370032,
+                                "reference": ""
+                              }
+                            ]
+                          },
+                          {
+                            "packid": 18257,
+                            "packtypename": "Medifon laatikko pieni palautettava",
+                            "weight": 2,
+                            "description": "Terveydenhuollon tuotteita",
+                            "packno": 3,
+                            "sscc": "00164382770735382572",
+                            "packlines": [
+                              {
+                                "packlineid": 169715,
+                                "linenumber": 5,
+                                "itemcode": "T121212Z",
+                                "description": "Testituote Kolli nollasaldo",
+                                "quantity": 0,
+                                "quantityordered": 3,
+                                "batch": null,
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 370323,
+                                "reference": ""
+                              },
+                              {
+                                "packlineid": 169714,
+                                "linenumber": 4,
+                                "itemcode": "T123456",
+                                "description": "Testituote verkkokaupparuksi päällä",
+                                "quantity": 1,
+                                "quantityordered": 1,
+                                "batch": "",
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 370323,
+                                "reference": ""
+                              },
+                              {
+                                "packlineid": 169713,
+                                "linenumber": 3,
+                                "itemcode": "T123456",
+                                "description": "Testituote verkkokaupparuksi päällä",
+                                "quantity": 1,
+                                "quantityordered": 1,
+                                "batch": "",
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 370323,
+                                "reference": ""
+                              },
+                              {
+                                "packlineid": 169712,
+                                "linenumber": 2,
+                                "itemcode": "T123456",
+                                "description": "Testituote verkkokaupparuksi päällä",
+                                "quantity": 1,
+                                "quantityordered": 1,
+                                "batch": "",
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 370323,
+                                "reference": ""
+                              },
+                              {
+                                "packlineid": 169711,
+                                "linenumber": 1,
+                                "itemcode": "T123456",
+                                "description": "Testituote verkkokaupparuksi päällä",
+                                "quantity": 2,
+                                "quantityordered": 2,
+                                "batch": "",
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 370323,
+                                "reference": ""
+                              }
+                            ]
+                          },
+                          {
+                            "packid": 18273,
+                            "packtypename": "Medifon laatikko pieni palautettava",
+                            "weight": 2,
+                            "description": "Terveydenhuollon tuotteita",
+                            "packno": 4,
+                            "sscc": "00164382770735482739",
+                            "packlines": [
+                              {
+                                "packlineid": 169868,
+                                "linenumber": 3,
+                                "itemcode": "T121212Z",
+                                "description": "Testituote Kolli nollasaldo",
+                                "quantity": 0,
+                                "quantityordered": 3,
+                                "batch": "",
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 370377,
+                                "reference": ""
+                              },
+                              {
+                                "packlineid": 169867,
+                                "linenumber": 2,
+                                "itemcode": "T123456",
+                                "description": "Testituote verkkokaupparuksi päällä",
+                                "quantity": 0,
+                                "quantityordered": 6,
+                                "batch": "",
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 370377,
+                                "reference": ""
+                              },
+                              {
+                                "packlineid": 169866,
+                                "linenumber": 1,
+                                "itemcode": "T123456",
+                                "description": "Testituote verkkokaupparuksi päällä",
+                                "quantity": 2,
+                                "quantityordered": 2,
+                                "batch": "",
+                                "expdate": null,
+                                "unitpriceexvat": 0,
+                                "discountpercent": 0,
+                                "vatpercent": 0,
+                                "orderno": 370377,
+                                "reference": ""
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 }
               }
             }

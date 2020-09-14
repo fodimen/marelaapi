@@ -1,35 +1,6 @@
 {
   "title": "ShipmentPack",
   "type": "object",
-  "properties": {
-    "packid": {
-      "type": "integer"
-    },
-    "packtypename": {
-      "type": "string",
-      "maxLength": 50
-    },
-    "weight": {
-      "type": "number"
-    },
-    "description": {
-      "type": "string",
-      "maxLength": 100
-    },
-    "packno": {
-      "type": "integer"
-    },
-    "sscc": {
-      "type": "string",
-      "maxLength": 20
-    },
-    "packlines": {
-      "type": "array",
-      "items": {
-        "$ref": "./ShipmentPackLine.v1.json"
-      }
-    }
-  },
   "x-tags": [
     "Shipments"
   ],
@@ -42,6 +13,41 @@
       "packno": 1,
       "sscc": "00164382770000100016",
       "packlines": []
+    }
+  },
+  "properties": {
+    "packid": {
+      "type": "integer",
+      "description": "Pakkauksen Id"
+    },
+    "packtypename": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Pakkaustyypin nimi"
+    },
+    "weight": {
+      "type": "number",
+      "description": "Paino"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Sisällön kuvaus"
+    },
+    "packno": {
+      "type": "integer",
+      "description": "Lähetyksen pakkausnumero"
+    },
+    "sscc": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "SSCC"
+    },
+    "packlines": {
+      "type": "array",
+      "items": {
+        "$ref": "./ShipmentPackLine.v1.json"
+      }
     }
   }
 }

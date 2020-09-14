@@ -1,54 +1,6 @@
 {
   "title": "Shipment",
   "type": "object",
-  "properties": {
-    "shipmentid": {
-      "type": "integer"
-    },
-    "customercode": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 15
-    },
-    "receivername": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 100
-    },
-    "receiverstreet": {
-      "type": "string",
-      "maxLength": 100
-    },
-    "receiverstreetno": {
-      "type": "string",
-      "maxLength": 100
-    },
-    "receivercity": {
-      "type": "string",
-      "maxLength": 100
-    },
-    "receiverzipcode": {
-      "type": "string",
-      "maxLength": 20
-    },
-    "receivercountrycode": {
-      "type": "string",
-      "maxLength": 3
-    },
-    "waybillnumber": {
-      "type": "integer"
-    },
-    "datecreated": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "shipmentpacks": {
-      "type": "array",
-      "items": {
-        "$ref": "./ShipmentPack.v1.json"
-      }
-    }
-  },
   "x-tags": [
     "Shipments"
   ],
@@ -57,14 +9,66 @@
       "shipmentid": 2,
       "customercode": "75490",
       "receivername": "Testiasiakas",
-      "receiverstreet": "Kadunnimi",
-      "receiverstreetno": "100",
+      "receiverstreet": "Kadunnimi 100",
       "receivercity": "Helsinki",
       "receiverzipcode": "00100",
       "receivercountrycode": "FI",
       "waybillnumber": 201022721849,
-      "datecreated": "YYYY-MM-DDTHH:mm:ss.sssZ",
+      "datecreated": "2020-01-17T19:04:06.737",
       "shipmentpacks": []
+    }
+  },
+  "properties": {
+    "shipmentid": {
+      "type": "integer",
+      "description": "Lähetyksen Id"
+    },
+    "customercode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 15,
+      "description": "Asiakasnumero"
+    },
+    "receivername": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "Vastaanottaja"
+    },
+    "receiverstreet": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Toimitusosoite/katu"
+    },
+    "receivercity": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Toimitusosoite/kaupunki"
+    },
+    "receiverzipcode": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "Toimitusosoite/postinumero"
+    },
+    "receivercountrycode": {
+      "type": "string",
+      "maxLength": 3,
+      "description": "Toimitusosoite/maakoodi"
+    },
+    "waybillnumber": {
+      "type": "integer",
+      "description": "Rahtikirjan numero"
+    },
+    "datecreated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Luomispäivä"
+    },
+    "shipmentpacks": {
+      "type": "array",
+      "items": {
+        "$ref": "./ShipmentPack.v1.json"
+      }
     }
   }
 }
