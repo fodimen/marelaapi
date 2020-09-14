@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://medsrv04/PharmadataApi/api/",
+      "url": "http://medsrv04/PharmadataApi/api",
       "description": "Pharmadatan API"
     }
   ],
@@ -68,10 +68,6 @@
                       "customername": "Apoteekki",
                       "parentof": [
                         {
-                          "customercode": "00002",
-                          "customername": "Apoteekin Oy"
-                        },
-                        {
                           "customercode": "00003",
                           "customername": "Apoteekki Robotti"
                         },
@@ -101,6 +97,88 @@
                   "type": "array",
                   "items": {
                     "$ref": "./Order.v1.json"
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "orderno": 493289,
+                        "customercode": "00001",
+                        "customername": "Apteekki",
+                        "orderdate": "2020-09-11T00:00:00",
+                        "duedate": "2020-09-11T00:00:00",
+                        "doctotalexvat": 1581.25,
+                        "vatsum": 314.34,
+                        "doctotal": 1895.59,
+                        "reference": "47625",
+                        "isbackorder": false,
+                        "deliverywithnextorder": false,
+                        "status": "O",
+                        "orderrows": [
+                          {
+                            "itemcode": "9282974",
+                            "description": "Ainoa B12-vitamiini 1mg 100 kaps",
+                            "quantity": 2,
+                            "pricebefdi": 10.9,
+                            "discountpercent": 10,
+                            "price": 9.81,
+                            "vatpercent": 14,
+                            "linetotal": 19.62,
+                            "freetext": "",
+                            "linestatus": "O"
+                          },
+                          {
+                            "itemcode": "9282996",
+                            "description": "Ainoa Kalsium + D3 100 kaps",
+                            "quantity": 2,
+                            "pricebefdi": 5.95,
+                            "discountpercent": 10,
+                            "price": 5.36,
+                            "vatpercent": 14,
+                            "linetotal": 10.71,
+                            "freetext": "",
+                            "linestatus": "O"
+                          },
+                          {
+                            "itemcode": "9283018",
+                            "description": "Ainoa Rauta 100mg + C 100 kaps",
+                            "quantity": 2,
+                            "pricebefdi": 9.95,
+                            "discountpercent": 10,
+                            "price": 8.96,
+                            "vatpercent": 14,
+                            "linetotal": 17.91,
+                            "freetext": "",
+                            "linestatus": "O"
+                          },
+                          {
+                            "itemcode": "9236697",
+                            "description": "Ainu sinkkivoide 100 ml",
+                            "quantity": 1,
+                            "pricebefdi": 2.04,
+                            "discountpercent": 0,
+                            "price": 2.04,
+                            "vatpercent": 24,
+                            "linetotal": 2.04,
+                            "freetext": "",
+                            "linestatus": "O"
+                          },
+                          {
+                            "itemcode": "9238149",
+                            "description": "Apteq B12 metyylikobalamiini 1000µg 30 tabl",
+                            "quantity": 2,
+                            "pricebefdi": 5.2,
+                            "discountpercent": 20,
+                            "price": 4.16,
+                            "vatpercent": 14,
+                            "linetotal": 8.32,
+                            "freetext": "",
+                            "linestatus": "O"
+                          }
+                        ]
+                      }
+                    ]
                   }
                 }
               }
@@ -248,7 +326,54 @@
                     "orderrows"
                   ]
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "customerorderno": 71,
+                      "customercode": "75490",
+                      "customername": "Testiasiakas",
+                      "orderdate": "2020-09-14T09:54:13.687",
+                      "duedate": "2020-10-23T00:00:00",
+                      "reference": "kukkuluuruu",
+                      "deliverywithnextorder": true,
+                      "status": "DRAFT",
+                      "orderrows": [
+                        {
+                          "itemcode": "9236180",
+                          "description": "Catapult Cat - Ravintolisä 16 x 6 tabl",
+                          "quantity": 10,
+                          "pricebefdi": 81.92,
+                          "discountpercent": 0,
+                          "price": 81.92,
+                          "freetext": "",
+                          "linestatus": "DRAFT"
+                        },
+                        {
+                          "itemcode": "9248379",
+                          "description": "APTEEKKI FluAcute Yskä 20 ml",
+                          "quantity": 10,
+                          "pricebefdi": 0,
+                          "discountpercent": 0,
+                          "price": 0,
+                          "freetext": "",
+                          "linestatus": "VALIDATIONERROR",
+                          "errorinfo": "Tuotteen tilaaminen on sallittu vain Apteekkariliiton jäsenapteekeille"
+                        },
+                        {
+                          "itemcode": "T121212",
+                          "description": "Testituote Kolli",
+                          "quantity": 10,
+                          "pricebefdi": 0,
+                          "discountpercent": 0,
+                          "price": 0,
+                          "freetext": "",
+                          "linestatus": "VALIDATIONERROR",
+                          "errorinfo": "Tuote ei ole jakelussa"
+                        }
+                      ]
+                    }
+                  }
+                }
               }
             }
           }
@@ -261,7 +386,42 @@
                 "$ref": "./OrderRequest.v1.json"
               },
               "examples": {
-                "example-1": {}
+                "example-1": {
+                  "value": {
+                    "customerorderno": 69,
+                    "customercode": "75490",
+                    "customername": "Testiasiakas",
+                    "orderdate": "2020-09-14T09:45:11.24",
+                    "duedate": "2020-10-23T00:00:00",
+                    "reference": "kukkuluuruu",
+                    "deliverywithnextorder": true,
+                    "status": "DRAFT",
+                    "orderrows": [
+                      {
+                        "itemcode": "T123456",
+                        "description": "Testituote verkkokaupparuksi päällä",
+                        "quantity": 10,
+                        "pricebefdi": 0,
+                        "discountpercent": 0,
+                        "price": 0,
+                        "freetext": "",
+                        "linestatus": "VALIDATIONERROR",
+                        "errorinfo": "Tuote ei ole jakelussa"
+                      },
+                      {
+                        "itemcode": "T121212",
+                        "description": "Testituote Kolli",
+                        "quantity": 10,
+                        "pricebefdi": 0,
+                        "discountpercent": 0,
+                        "price": 0,
+                        "freetext": "",
+                        "linestatus": "VALIDATIONERROR",
+                        "errorinfo": "Tuote ei ole jakelussa"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
