@@ -221,7 +221,8 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "12345"
             },
             "in": "query",
             "name": "orderNo",
