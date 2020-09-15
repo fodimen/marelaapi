@@ -217,7 +217,15 @@
             },
             "in": "query",
             "name": "customerOrderNo",
-            "description": "Hae vain tilaus jonka customerorderno = ?"
+            "description": "Hae tilaus jonka customerorderno = ?"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "orderNo",
+            "description": "Hae tilaus jonka orderno = ?"
           }
         ],
         "tags": [
