@@ -452,7 +452,7 @@
     },
     "/{customercode}/itemavailability": {
       "get": {
-        "summary": "List Items Availability",
+        "summary": "List Items & Availability",
         "tags": [
           "Items"
         ],
@@ -497,24 +497,17 @@
           {
             "schema": {
               "type": "string",
-              "enum": [
-                "true",
-                "false"
-              ],
-              "example": "onlyOutOfStock=true"
-            },
-            "in": "query",
-            "name": "onlyOutOfStockItems",
-            "description": "Jos true niin palauttaa vain tuotteet joita ei varastossa"
-          },
-          {
-            "schema": {
-              "type": "string",
               "example": "000451, T121212"
             },
             "in": "query",
             "name": "itemcodes",
             "description": "Lista tarkastettavista tuotteista"
+          },
+          {
+            "schema": {},
+            "in": "query",
+            "name": "onlyOutOfStockItems",
+            "description": "Palauttaa vain tuotepuutteet"
           }
         ]
       },
