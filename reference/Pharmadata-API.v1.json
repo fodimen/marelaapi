@@ -3,7 +3,7 @@
   "info": {
     "title": "Pharmadata API",
     "version": "1.0",
-    "description": "Geneerinen API Pharmadatan käyttöön"
+    "description": "Geneerinen API Pharmadatan käyttöön, Dev-vaiheessa"
   },
   "servers": [
     {
