@@ -1,0 +1,54 @@
+{
+  "title": "CreditNote",
+  "type": "object",
+  "properties": {
+    "invoiceno": {
+      "type": "string",
+      "description": "Medifon hyvityslaksun numero"
+    },
+    "customercode": {
+      "type": "string",
+      "description": "Medifon asiakasnumero"
+    },
+    "customername": {
+      "type": "string",
+      "description": "Asiakas"
+    },
+    "postingdate": {
+      "type": "string",
+      "description": "Kirjauspäivä"
+    },
+    "duedate": {
+      "type": "string",
+      "description": "Eräpäivä"
+    },
+    "taxdate": {
+      "type": "string",
+      "description": "Tositepäivä"
+    },
+    "paymentreference": {
+      "type": "string",
+      "description": "Maksuviite"
+    },
+    "reference": {
+      "type": "string",
+      "description": "\nAsiakasviite"
+    },
+    "comments": {
+      "type": "string",
+      "description": "Huomautukset"
+    },
+    "doctol": {
+      "type": "string",
+      "description": "Tositteen veroton kokona"
+    },
+    "openbalance": {
+      "type": "string",
+      "description": "Tositteen verollinen avoin summa"
+    },
+    "vatsum": {
+      "type": "string",
+      "description": "Verosumma"
+    }
+  }
+}

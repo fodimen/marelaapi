@@ -3,7 +3,7 @@
   "info": {
     "title": "Pharmadata API",
     "version": "1.0",
-    "description": "Geneerinen API Pharmadatan käyttöön"
+    "description": "Geneerinen API Pharmadatan käyttöön, Dev-vaiheessa"
   },
   "servers": [
     {
@@ -353,46 +353,24 @@
                 "examples": {
                   "example-1": {
                     "value": {
-                      "customerorderno": 71,
+                      "customerorderno": 72,
                       "customercode": "75490",
                       "customername": "Testiasiakas",
-                      "orderdate": "2020-09-14T09:54:13.687",
-                      "duedate": "2020-10-23T00:00:00",
                       "reference": "kukkuluuruu",
+                      "duedate": "2020-10-23T00:00:00",
                       "deliverywithnextorder": true,
-                      "status": "DRAFT",
                       "orderrows": [
                         {
                           "itemcode": "9236180",
-                          "description": "Catapult Cat - Ravintolisä 16 x 6 tabl",
-                          "quantity": 10,
-                          "pricebefdi": 81.92,
-                          "discountpercent": 0,
-                          "price": 81.92,
-                          "freetext": "",
-                          "linestatus": "DRAFT"
+                          "quantity": 10
                         },
                         {
                           "itemcode": "9248379",
-                          "description": "APTEEKKI FluAcute Yskä 20 ml",
-                          "quantity": 10,
-                          "pricebefdi": 0,
-                          "discountpercent": 0,
-                          "price": 0,
-                          "freetext": "",
-                          "linestatus": "VALIDATIONERROR",
-                          "errorinfo": "Tuotteen tilaaminen on sallittu vain Apteekkariliiton jäsenapteekeille"
+                          "quantity": 10
                         },
                         {
                           "itemcode": "T121212",
-                          "description": "Testituote Kolli",
-                          "quantity": 10,
-                          "pricebefdi": 0,
-                          "discountpercent": 0,
-                          "price": 0,
-                          "freetext": "",
-                          "linestatus": "VALIDATIONERROR",
-                          "errorinfo": "Tuote ei ole jakelussa"
+                          "quantity": 10
                         }
                       ]
                     }
