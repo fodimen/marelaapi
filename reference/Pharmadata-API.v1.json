@@ -772,7 +772,9 @@
       ],
       "get": {
         "summary": "Your GET endpoint",
-        "tags": [],
+        "tags": [
+          "Credit Notes"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -819,6 +821,11 @@
   "security": [
     {
       "apiKey": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Credit Notes"
     }
   ]
 }

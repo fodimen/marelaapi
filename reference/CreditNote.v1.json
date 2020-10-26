@@ -73,5 +73,9 @@
       "type": "string",
       "description": "Huomautukset"
     }
-  }
+  },
+  "description": "",
+  "x-tags": [
+    "Credit Notes"
+  ]
 }
