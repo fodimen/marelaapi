@@ -3,52 +3,59 @@
   "type": "object",
   "properties": {
     "invoiceno": {
-      "type": "string",
+      "type": "integer",
       "description": "Medifon hyvityslaksun numero"
     },
     "customercode": {
       "type": "string",
-      "description": "Medifon asiakasnumero"
+      "description": "Medifon asiakasnumero",
+      "maxLength": 15
     },
     "customername": {
       "type": "string",
-      "description": "Asiakas"
+      "description": "Asiakas",
+      "maxLength": 100
     },
     "postingdate": {
       "type": "string",
-      "description": "Kirjauspäivä"
+      "description": "Kirjauspäivä",
+      "format": "date-time"
     },
     "duedate": {
       "type": "string",
-      "description": "Eräpäivä"
+      "description": "Eräpäivä",
+      "format": "date-time"
     },
     "taxdate": {
       "type": "string",
-      "description": "Tositepäivä"
+      "description": "Tositepäivä",
+      "format": "date-time"
+    },
+    "doctol": {
+      "type": "number",
+      "description": "Tositteen veroton kokona"
+    },
+    "openbalance": {
+      "type": "number",
+      "description": "Tositteen verollinen avoin summa"
+    },
+    "vatsum": {
+      "type": "number",
+      "description": "Verosumma"
     },
     "paymentreference": {
       "type": "string",
-      "description": "Maksuviite"
+      "description": "Maksuviite",
+      "maxLength": 27
     },
     "reference": {
       "type": "string",
-      "description": "\nAsiakasviite"
+      "description": "Asiakasviite",
+      "maxLength": 100
     },
     "comments": {
       "type": "string",
       "description": "Huomautukset"
-    },
-    "doctol": {
-      "type": "string",
-      "description": "Tositteen veroton kokona"
-    },
-    "openbalance": {
-      "type": "string",
-      "description": "Tositteen verollinen avoin summa"
-    },
-    "vatsum": {
-      "type": "string",
-      "description": "Verosumma"
     }
   }
 }

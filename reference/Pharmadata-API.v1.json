@@ -758,6 +758,35 @@
           "required": true
         }
       ]
+    },
+    "/{customercode}/opencreditnotes": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "customercode",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./CreditNote.v1.json"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-customercode-opencreditnotes"
+      }
     }
   },
   "components": {
