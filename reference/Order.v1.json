@@ -24,7 +24,7 @@
   },
   "properties": {
     "orderno": {
-      "type": "string",
+      "type": "integer",
       "description": "Medifon tilausnumero"
     },
     "customercode": {

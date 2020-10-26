@@ -396,36 +396,24 @@
               "examples": {
                 "example-1": {
                   "value": {
-                    "customerorderno": 69,
+                    "customerorderno": 72,
                     "customercode": "75490",
                     "customername": "Testiasiakas",
-                    "orderdate": "2020-09-14T09:45:11.24",
-                    "duedate": "2020-10-23T00:00:00",
                     "reference": "kukkuluuruu",
+                    "duedate": "2020-10-23T00:00:00",
                     "deliverywithnextorder": true,
-                    "status": "DRAFT",
                     "orderrows": [
                       {
-                        "itemcode": "T123456",
-                        "description": "Testituote verkkokaupparuksi päällä",
-                        "quantity": 10,
-                        "pricebefdi": 0,
-                        "discountpercent": 0,
-                        "price": 0,
-                        "freetext": "",
-                        "linestatus": "VALIDATIONERROR",
-                        "errorinfo": "Tuote ei ole jakelussa"
+                        "itemcode": "9236180",
+                        "quantity": 10
+                      },
+                      {
+                        "itemcode": "9248379",
+                        "quantity": 10
                       },
                       {
                         "itemcode": "T121212",
-                        "description": "Testituote Kolli",
-                        "quantity": 10,
-                        "pricebefdi": 0,
-                        "discountpercent": 0,
-                        "price": 0,
-                        "freetext": "",
-                        "linestatus": "VALIDATIONERROR",
-                        "errorinfo": "Tuote ei ole jakelussa"
+                        "quantity": 10
                       }
                     ]
                   }
