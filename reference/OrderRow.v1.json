@@ -64,6 +64,11 @@
         "C"
       ],
       "description": "Onko rivi avoin/suljettu (O,C)"
+    },
+    "ordersource": {
+      "type": "string",
+      "description": "Tilauksen lähdejärjestelmä",
+      "maxLength": 32
     }
   }
 }

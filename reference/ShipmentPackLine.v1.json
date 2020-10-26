@@ -87,6 +87,11 @@
     "customerorderno": {
       "type": "string",
       "description": "Asiakkaan tilausnumero"
+    },
+    "ordersource": {
+      "type": "string",
+      "description": "Tilauksen lähdejärjestelmä",
+      "maxLength": 32
     }
   },
   "required": [
