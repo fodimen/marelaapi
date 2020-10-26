@@ -1,10 +1,26 @@
 {
   "title": "CreditNote",
   "type": "object",
+  "x-examples": {
+    "example-1": {
+      "invoiceno": 0,
+      "customercode": "string",
+      "customername": "string",
+      "postingdate": "2019-08-24T14:15:22Z",
+      "duedate": "2019-08-24T14:15:22Z",
+      "taxdate": "2019-08-24T14:15:22Z",
+      "doctol": 0,
+      "openbalance": 0,
+      "vatsum": 0,
+      "paymentreference": "string",
+      "reference": "string",
+      "comments": "string"
+    }
+  },
   "properties": {
     "invoiceno": {
       "type": "integer",
-      "description": "Medifon hyvityslaksun numero"
+      "description": "Medifon hyvityslaskun numero"
     },
     "customercode": {
       "type": "string",
@@ -31,9 +47,9 @@
       "description": "Tositepäivä",
       "format": "date-time"
     },
-    "doctol": {
+    "doctotal": {
       "type": "number",
-      "description": "Tositteen veroton kokona"
+      "description": "Tositteen veroton kokonaissumma"
     },
     "openbalance": {
       "type": "number",

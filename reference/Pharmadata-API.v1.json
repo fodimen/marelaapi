@@ -780,6 +780,24 @@
               "application/json": {
                 "schema": {
                   "$ref": "./CreditNote.v1.json"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "invoiceno": 0,
+                      "customercode": "string",
+                      "customername": "string",
+                      "postingdate": "2019-08-24T14:15:22Z",
+                      "duedate": "2019-08-24T14:15:22Z",
+                      "taxdate": "2019-08-24T14:15:22Z",
+                      "doctol": 0,
+                      "openbalance": 0,
+                      "vatsum": 0,
+                      "paymentreference": "string",
+                      "reference": "string",
+                      "comments": "string"
+                    }
+                  }
                 }
               }
             }
