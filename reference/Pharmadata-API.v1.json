@@ -7,8 +7,8 @@
   },
   "servers": [
     {
-      "url": "http://medsrv04/PharmadataApi/api",
-      "description": "Pharmadatan API"
+      "url": "https://api2.medifon.fi/api/pd/v0",
+      "description": "Pharmadatan API v0"
     }
   ],
   "paths": {
