@@ -482,7 +482,7 @@
           }
         },
         "operationId": "get-itemavailability",
-        "description": "Tuotteiden saatavuus",
+        "description": "Palauttaa tuotteiden saatavuuden",
         "parameters": [
           {
             "schema": {
@@ -746,7 +746,7 @@
           }
         },
         "operationId": "get-shipments",
-        "description": "Lähetykset asiakkaalle"
+        "description": "Palauttaa asiakkaan lähetykset"
       },
       "parameters": [
         {
@@ -771,7 +771,7 @@
         }
       ],
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "Get open Credit Notes",
         "tags": [
           "Credit Notes"
         ],
@@ -805,7 +805,8 @@
             }
           }
         },
-        "operationId": "get-customercode-opencreditnotes"
+        "operationId": "get-customercode-opencreditnotes",
+        "description": "Palauttaa asiakkaan avoimet hyvityslaskut"
       }
     }
   },
