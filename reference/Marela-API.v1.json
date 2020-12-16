@@ -7,8 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://api2.medifon.fi/api/marela/v0",
-      "description": "Pharmadatan API v0"
+      "url": "https://api2.medifon.fi/api/marela/v1"
     }
   ],
   "paths": {
