@@ -3,7 +3,7 @@
   "info": {
     "title": "Marela API",
     "version": "1.0",
-    "description": "Marela-Medifon tilaus API, Dev-vaiheessa"
+    "description": "Marela-Medifon tilaus API, Dev-vaiheessa "
   },
   "servers": [
     {
