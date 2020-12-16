@@ -1,13 +1,13 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Pharmadata API",
+    "title": "Marela API",
     "version": "1.0",
-    "description": "Geneerinen API Pharmadatan käyttöön, Dev-vaiheessa"
+    "description": "Marela-Medifon tilaus API, Dev-vaiheessa"
   },
   "servers": [
     {
-      "url": "https://api2.medifon.fi/api/pd/v0",
+      "url": "https://api2.medifon.fi/api/marela/v0",
       "description": "Pharmadatan API v0"
     }
   ],
